@@ -461,6 +461,9 @@ footer {
   .floating-card {
     display: none; /* Hide on smaller screens for cleaner look */
   }
+  .server-image{
+    display: none; /* Hide on smaller screens for cleaner look */
+  }
 }
 
 @media (max-width: 768px) {
