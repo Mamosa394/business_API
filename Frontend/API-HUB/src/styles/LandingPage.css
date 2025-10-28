@@ -25,95 +25,6 @@ body, html {
   opacity: 0.3;
 }
 
-/* Enhanced Navbar */
-.navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(10, 15, 26, 0.8);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 199, 255, 0.1);
-  padding: 18px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #00c7ff;
-  text-shadow: 0 0 20px #00c7ff;
-}
-
-.logo-icon {
-  font-size: 1.6rem;
-  animation: pulse 2s infinite;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 40px;
-}
-
-.nav-links li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.nav-number {
-  color: #00c7ff;
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-.nav-links li:hover {
-  color: #00c7ff;
-  transform: translateY(-2px);
-}
-
-.nav-actions {
-  display: flex;
-  gap: 15px;
-}
-
-.nav-btn {
-  padding: 10px 24px;
-  border-radius: 6px;
-  font-family: inherit;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.nav-btn.login {
-  background: transparent;
-  color: #c9d1d9;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-btn.signup {
-  background: linear-gradient(135deg, #00c7ff, #0099cc);
-  color: #0a0f1a;
-  box-shadow: 0 4px 15px rgba(0, 199, 255, 0.3);
-}
-
-.nav-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 199, 255, 0.4);
-}
-
 /* Enhanced Landing Section */
 .landing {
   min-height: 100vh;
@@ -122,6 +33,7 @@ body, html {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 80px; /* Account for fixed header */
 }
 
 /* Gradient Orbs */
@@ -269,7 +181,7 @@ body, html {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -506,14 +418,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
-  }
-  
-  .nav-links {
-    display: none;
-  }
-  
   h1 {
     font-size: 2.2rem;
   }

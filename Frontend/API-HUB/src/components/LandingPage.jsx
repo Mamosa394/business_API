@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/LandingPage.css";
 import server from "../assets/server.gif";
+import Header from "../components/Header";
 
 export default function LandingPage() {
   const canvasRef = useRef(null);
@@ -92,25 +93,9 @@ export default function LandingPage() {
 
   return (
     <section className="landing">
+      <Header />
       <canvas ref={canvasRef} className="matrix-canvas" />
       
-      <div className="navbar">
-        <div className="logo">
-          <div className="logo-icon">⚡</div>
-          API Hub
-        </div>
-        <ul className="nav-links">
-          <li><span className="nav-number">01</span> Products</li>
-          <li><span className="nav-number">02</span> Documentation</li>
-          <li><span className="nav-number">03</span> Enterprise</li>
-          <li><span className="nav-number">04</span> Community</li>
-        </ul>
-        <div className="nav-actions">
-          <button className="nav-btn login">Sign In</button>
-          <button className="nav-btn signup">Get Started</button>
-        </div>
-      </div>
-
       <div className="particles"></div>
       <div className="gradient-orbs">
         <div className="orb orb-1"></div>
