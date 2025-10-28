@@ -22,26 +22,26 @@ export default function Products() {
       name: "Payment Processing API",
       description: "Secure payment processing with support for 100+ payment methods worldwide. PCI DSS compliant with fraud detection.",
       category: "payments",
-      price: { monthly: 1499, annually: 14390 },
+      price: { monthly: 499, annually: 4390 },
       rating: 4.9,
       reviews: 1247,
       features: ["PCI DSS Compliant", "100+ Payment Methods", "Fraud Detection", "Recurring Billing", "Mobile SDKs"],
       documentation: "https://docs.apihub.com/payments",
       status: "popular",
-      usage: "10M+ requests/month"
+      usage: "100k requests/month"
     },
     {
       id: 2,
       name: "E-Commerce Platform API",
       description: "Complete e-commerce solution with product management, inventory tracking, and order processing capabilities.",
       category: "ecommerce",
-      price: { monthly: 2249, annually: 21590 },
+      price: { monthly: 249, annually: 1590 },
       rating: 4.8,
       reviews: 892,
       features: ["Product Catalog", "Inventory Management", "Order Processing", "Shipping Integration", "Tax Calculation"],
       documentation: "https://docs.apihub.com/ecommerce",
       status: "featured",
-      usage: "5M+ products managed"
+      usage: "50k products managed"
     },
     {
       id: 3,
@@ -54,7 +54,7 @@ export default function Products() {
       features: ["Real-time Pricing", "Discount Engine", "Cart Recovery", "Multi-currency", "Tax Support"],
       documentation: "https://docs.apihub.com/cart",
       status: "popular",
-      usage: "2M+ active carts"
+      usage: "100k+ active carts"
     },
     {
       id: 4,
@@ -67,7 +67,7 @@ export default function Products() {
       features: ["Global Coverage", "Delivery Reports", "2FA Support", "Voice Calls", "Number Verification"],
       documentation: "https://docs.apihub.com/sms",
       status: "new",
-      usage: "50M+ messages sent"
+      usage: "500k messages sent"
     },
     {
       id: 5,
@@ -80,46 +80,46 @@ export default function Products() {
       features: ["Transactional Emails", "Marketing Campaigns", "Analytics", "Template Builder", "A/B Testing"],
       documentation: "https://docs.apihub.com/email",
       status: "popular",
-      usage: "100M+ emails delivered"
+      usage: "100k emails delivered"
     },
     {
       id: 6,
       name: "AI Product Recommendations",
       description: "Machine learning-powered product recommendations based on user behavior and purchase history.",
       category: "ai",
-      price: { monthly: 2999, annually: 28790 },
+      price: { monthly: 1000, annually: 8790 },
       rating: 4.9,
       reviews: 278,
       features: ["ML Algorithms", "Real-time Updates", "Personalization", "A/B Testing", "Analytics Dashboard"],
       documentation: "https://docs.apihub.com/recommendations",
       status: "featured",
-      usage: "1B+ recommendations"
+      usage: "50k recommendations"
     },
     {
       id: 7,
       name: "Inventory Management API",
       description: "Real-time inventory tracking across multiple warehouses with low-stock alerts and automated ordering.",
       category: "ecommerce",
-      price: { monthly: 1349, annually: 12950 },
+      price: { monthly: 349, annually: 2950 },
       rating: 4.7,
       reviews: 445,
       features: ["Multi-warehouse", "Low Stock Alerts", "Automated Orders", "Barcode Support", "Reporting"],
       documentation: "https://docs.apihub.com/inventory",
       status: "popular",
-      usage: "500K+ SKUs managed"
+      usage: "10k+ SKUs managed"
     },
     {
       id: 8,
       name: "Fraud Detection API",
       description: "Advanced fraud detection using machine learning to identify suspicious transactions in real-time.",
       category: "ai",
-      price: { monthly: 4499, annually: 43190 },
+      price: { monthly: 499, annually: 3190 },
       rating: 4.8,
       reviews: 189,
       features: ["Real-time Analysis", "ML Models", "Custom Rules", "Risk Scoring", "Chargeback Protection"],
       documentation: "https://docs.apihub.com/fraud",
       status: "featured",
-      usage: "10M+ transactions analyzed"
+      usage: "90k transactions analyzed"
     },
     {
       id: 9,
@@ -132,46 +132,46 @@ export default function Products() {
       features: ["Multi-carrier", "Real-time Rates", "Tracking", "Label Generation", "Returns Management"],
       documentation: "https://docs.apihub.com/shipping",
       status: "popular",
-      usage: "1M+ shipments"
+      usage: "20k shipments"
     },
     {
       id: 10,
       name: "Customer Data Platform",
       description: "Unified customer profiles with segmentation, analytics, and cross-channel tracking.",
       category: "data",
-      price: { monthly: 2699, annually: 25910 },
+      price: { monthly: 699, annually: 5910 },
       rating: 4.7,
       reviews: 223,
       features: ["Customer Profiles", "Segmentation", "Event Tracking", "Analytics", "GDPR Compliant"],
       documentation: "https://docs.apihub.com/cdp",
       status: "new",
-      usage: "50M+ customer profiles"
+      usage: "400k customer profiles"
     },
     {
       id: 11,
       name: "Price Optimization API",
       description: "Dynamic pricing engine that adjusts prices based on demand, competition, and market conditions.",
       category: "ai",
-      price: { monthly: 3749, annually: 35990 },
+      price: { monthly: 749, annually: 5990 },
       rating: 4.8,
       reviews: 156,
       features: ["Dynamic Pricing", "Competitor Monitoring", "Demand Forecasting", "A/B Testing", "Revenue Analytics"],
       documentation: "https://docs.apihub.com/pricing",
       status: "featured",
-      usage: "5M+ price updates"
+      usage: "20k price updates"
     },
     {
       id: 12,
       name: "Subscription Billing API",
       description: "Recurring billing and subscription management with dunning management and revenue recognition.",
       category: "payments",
-      price: { monthly: 1949, annually: 18710 },
+      price: { monthly: 949, annually: 8710 },
       rating: 4.7,
       reviews: 278,
       features: ["Recurring Billing", "Dunning Management", "Revenue Recognition", "Multiple Plans", "Trial Management"],
       documentation: "https://docs.apihub.com/subscriptions",
       status: "popular",
-      usage: "2M+ active subscriptions"
+      usage: "80k+ active subscriptions"
     }
   ];
 
