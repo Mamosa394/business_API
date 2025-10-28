@@ -6,7 +6,7 @@ import Documentation from './pages/Documentation'
 import Community from './pages/Community'
 import Products from './pages/Products'
 import SignIn from './components/SignIn'
-import Enterprise from './pages/Enterprise' // You'll need to create this component
+import Enterprise from './pages/Enterprise' 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignIn />} /> {/* You can reuse SignIn or create a separate SignUp component */}
+        {/* <Route path="/signup" element={<SignIn />} />  */}
         <Route path="/products" element={<Products />} />
         <Route path="/documentation" element={<Documentation />} />
         <Route path="/enterprise" element={<Enterprise />} />
