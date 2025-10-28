@@ -6,7 +6,7 @@ import Documentation from './pages/Documentation'
 import Community from './pages/Community'
 import Products from './pages/Products'
 import SignIn from './components/SignIn'
-import Enterprise from './pages/Enterprise' 
+import Enterprise from './components/Enterprise' 
 
 function App() {
   const [count, setCount] = useState(0)
