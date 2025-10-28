@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/enterprise.css";
 import Header from "../components/Header";
-/*
-import securityShield from "../assets/security-shield.svg";
-import scalability from "../assets/scalability.svg";
-import support from "../assets/support.svg";
-*/
 export default function EnterprisePage() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [formData, setFormData] = useState({
@@ -48,7 +43,7 @@ export default function EnterprisePage() {
   const pricingTiers = [
     {
       name: "Business",
-      price: "$999",
+      price: "M999",
       period: "month",
       description: "For growing teams needing advanced features",
       features: [
