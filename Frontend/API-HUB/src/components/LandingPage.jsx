@@ -167,7 +167,7 @@ export default function LandingPage() {
 
         <div className="image-section">
           <div className="glow-effect"></div>
-          {/* <img src={server} alt="Tech Server" className="hero-image" /> */}
+          <img src={server} alt="Tech Server" className="server" />
           <div className="rotating-ring ring-1"></div>
           <div className="rotating-ring ring-2"></div>
           <div className="pulse-dots">

@@ -313,13 +313,14 @@ h1 {
   animation: pulse 3s ease-in-out infinite;
 }
 
-.hero-image {
-  width: 500px;
-  max-width: 100%;
+.server {
   filter: drop-shadow(0 0 40px rgba(0, 199, 255, 0.3));
   animation: float 6s ease-in-out infinite;
   position: relative;
-  z-index: 2;
+  z-index: 0;
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
 }
 
 .rotating-ring {
