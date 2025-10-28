@@ -22,7 +22,7 @@ export default function Products() {
       name: "Payment Processing API",
       description: "Secure payment processing with support for 100+ payment methods worldwide. PCI DSS compliant with fraud detection.",
       category: "payments",
-      price: { monthly: 99, annually: 948 },
+      price: { monthly: 1499, annually: 14390 },
       rating: 4.9,
       reviews: 1247,
       features: ["PCI DSS Compliant", "100+ Payment Methods", "Fraud Detection", "Recurring Billing", "Mobile SDKs"],
@@ -35,7 +35,7 @@ export default function Products() {
       name: "E-Commerce Platform API",
       description: "Complete e-commerce solution with product management, inventory tracking, and order processing capabilities.",
       category: "ecommerce",
-      price: { monthly: 149, annually: 1428 },
+      price: { monthly: 2249, annually: 21590 },
       rating: 4.8,
       reviews: 892,
       features: ["Product Catalog", "Inventory Management", "Order Processing", "Shipping Integration", "Tax Calculation"],
@@ -48,7 +48,7 @@ export default function Products() {
       name: "Shopping Cart API",
       description: "Flexible cart management with real-time pricing, discounts, and abandoned cart recovery.",
       category: "ecommerce",
-      price: { monthly: 49, annually: 468 },
+      price: { monthly: 749, annually: 7190 },
       rating: 4.7,
       reviews: 567,
       features: ["Real-time Pricing", "Discount Engine", "Cart Recovery", "Multi-currency", "Tax Support"],
@@ -61,7 +61,7 @@ export default function Products() {
       name: "SMS & Voice API",
       description: "Global SMS and voice communication with delivery tracking and two-factor authentication support.",
       category: "communication",
-      price: { monthly: 25, annually: 240 },
+      price: { monthly: 379, annually: 3638 },
       rating: 4.6,
       reviews: 423,
       features: ["Global Coverage", "Delivery Reports", "2FA Support", "Voice Calls", "Number Verification"],
@@ -74,7 +74,7 @@ export default function Products() {
       name: "Email Marketing API",
       description: "Transactional and marketing email delivery with advanced analytics and template management.",
       category: "communication",
-      price: { monthly: 79, annually: 758 },
+      price: { monthly: 1199, annually: 11510 },
       rating: 4.5,
       reviews: 334,
       features: ["Transactional Emails", "Marketing Campaigns", "Analytics", "Template Builder", "A/B Testing"],
@@ -87,7 +87,7 @@ export default function Products() {
       name: "AI Product Recommendations",
       description: "Machine learning-powered product recommendations based on user behavior and purchase history.",
       category: "ai",
-      price: { monthly: 199, annually: 1908 },
+      price: { monthly: 2999, annually: 28790 },
       rating: 4.9,
       reviews: 278,
       features: ["ML Algorithms", "Real-time Updates", "Personalization", "A/B Testing", "Analytics Dashboard"],
@@ -100,7 +100,7 @@ export default function Products() {
       name: "Inventory Management API",
       description: "Real-time inventory tracking across multiple warehouses with low-stock alerts and automated ordering.",
       category: "ecommerce",
-      price: { monthly: 89, annually: 854 },
+      price: { monthly: 1349, annually: 12950 },
       rating: 4.7,
       reviews: 445,
       features: ["Multi-warehouse", "Low Stock Alerts", "Automated Orders", "Barcode Support", "Reporting"],
@@ -113,7 +113,7 @@ export default function Products() {
       name: "Fraud Detection API",
       description: "Advanced fraud detection using machine learning to identify suspicious transactions in real-time.",
       category: "ai",
-      price: { monthly: 299, annually: 2868 },
+      price: { monthly: 4499, annually: 43190 },
       rating: 4.8,
       reviews: 189,
       features: ["Real-time Analysis", "ML Models", "Custom Rules", "Risk Scoring", "Chargeback Protection"],
@@ -126,7 +126,7 @@ export default function Products() {
       name: "Shipping & Logistics API",
       description: "Multi-carrier shipping integration with real-time rates, tracking, and label generation.",
       category: "ecommerce",
-      price: { monthly: 69, annually: 662 },
+      price: { monthly: 1049, annually: 10070 },
       rating: 4.6,
       reviews: 312,
       features: ["Multi-carrier", "Real-time Rates", "Tracking", "Label Generation", "Returns Management"],
@@ -139,7 +139,7 @@ export default function Products() {
       name: "Customer Data Platform",
       description: "Unified customer profiles with segmentation, analytics, and cross-channel tracking.",
       category: "data",
-      price: { monthly: 179, annually: 1718 },
+      price: { monthly: 2699, annually: 25910 },
       rating: 4.7,
       reviews: 223,
       features: ["Customer Profiles", "Segmentation", "Event Tracking", "Analytics", "GDPR Compliant"],
@@ -152,7 +152,7 @@ export default function Products() {
       name: "Price Optimization API",
       description: "Dynamic pricing engine that adjusts prices based on demand, competition, and market conditions.",
       category: "ai",
-      price: { monthly: 249, annually: 2390 },
+      price: { monthly: 3749, annually: 35990 },
       rating: 4.8,
       reviews: 156,
       features: ["Dynamic Pricing", "Competitor Monitoring", "Demand Forecasting", "A/B Testing", "Revenue Analytics"],
@@ -165,7 +165,7 @@ export default function Products() {
       name: "Subscription Billing API",
       description: "Recurring billing and subscription management with dunning management and revenue recognition.",
       category: "payments",
-      price: { monthly: 129, annually: 1238 },
+      price: { monthly: 1949, annually: 18710 },
       rating: 4.7,
       reviews: 278,
       features: ["Recurring Billing", "Dunning Management", "Revenue Recognition", "Multiple Plans", "Trial Management"],
@@ -198,11 +198,7 @@ export default function Products() {
   });
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0
-    }).format(price);
+    return `M${price.toLocaleString('en-US')}`;
   };
 
   const getSavings = (monthly, annually) => {
@@ -226,11 +222,11 @@ export default function Products() {
                 <div className="stat-label">Uptime SLA</div>
               </div>
               <div className="stat">
-                <div className="stat-number">10B+</div>
+                <div className="stat-number">700 000+</div>
                 <div className="stat-label">API Calls/Month</div>
               </div>
               <div className="stat">
-                <div className="stat-number">50K+</div>
+                <div className="stat-number">5K+</div>
                 <div className="stat-label">Developers</div>
               </div>
               <div className="stat">
@@ -267,10 +263,10 @@ export default function Products() {
                   <label>Price Range</label>
                   <select className="filter-select">
                     <option>Any Price</option>
-                    <option>Under M150/month</option>
-                    <option>M150 - M500/month</option>
-                    <option>M500 - M1000/month</option>
-                    <option>Over M2000/month</option>
+                    <option>Under M1,500/month</option>
+                    <option>M1,500 - M5,000/month</option>
+                    <option>M5,000 - M10,000/month</option>
+                    <option>Over M10,000/month</option>
                   </select>
                 </div>
                 <div className="filter-group">
