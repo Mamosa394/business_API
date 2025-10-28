@@ -8,87 +8,115 @@ export default function LandingPage() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    // Enhanced floating particles with trails
-    const container = document.querySelector(".particles");
-    for (let i = 0; i < 25; i++) {
-      const p = document.createElement("span");
-      p.classList.add("particle");
-      p.style.left = `${Math.random() * 100}vw`;
-      p.style.animationDuration = `${4 + Math.random() * 8}s`;
-      p.style.animationDelay = `${Math.random() * 5}s`;
-      p.style.width = `${2 + Math.random() * 4}px`;
-      p.style.height = p.style.width;
-      container.appendChild(p);
-    }
+    // Enhanced floating particles
+    const createParticles = () => {
+      const container = document.querySelector(".particles");
+      container.innerHTML = ''; // Clear existing particles
+      
+      for (let i = 0; i < 20; i++) {
+        const p = document.createElement("span");
+        p.classList.add("particle");
+        p.style.left = `${Math.random() * 100}vw`;
+        p.style.animationDuration = `${4 + Math.random() * 6}s`;
+        p.style.animationDelay = `${Math.random() * 3}s`;
+        p.style.width = `${1 + Math.random() * 3}px`;
+        p.style.height = p.style.width;
+        container.appendChild(p);
+      }
+    };
 
     // Matrix rain effect
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const chars = "01APIHUBBYTHABOTLOUMAMOSAMOTSIETHATOCHELANEKELETSOHATOBUSINESSPROTOTYPE";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(10, 15, 26, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const setupMatrix = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
       
-      ctx.fillStyle = '#00c7ff';
-      ctx.font = `${fontSize}px JetBrains Mono`;
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      const chars = "01APIHUB";
+      const fontSize = Math.max(12, window.innerWidth / 100);
+      const columns = Math.floor(canvas.width / fontSize);
+      const drops = Array(columns).fill(1);
+
+      const drawMatrix = () => {
+        ctx.fillStyle = 'rgba(10, 15, 26, 0.03)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+        ctx.fillStyle = '#00c7ff';
+        ctx.font = `${fontSize}px JetBrains Mono`;
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
         }
-        drops[i]++;
+      };
+
+      return setInterval(drawMatrix, 40);
+    };
+
+    // Typing animation
+    const startTypingEffect = () => {
+      const texts = ["Developers", "Innovators", "Creators", "Visionaries"];
+      let textIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      const typeEffect = () => {
+        const current = texts[textIndex];
+        
+        if (isDeleting) {
+          charIndex--;
+        } else {
+          charIndex++;
+        }
+
+        if (textRef.current) {
+          textRef.current.textContent = current.substring(0, charIndex);
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === current.length) {
+          typeSpeed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+          typeSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typeSpeed);
+      };
+
+      setTimeout(typeEffect, 1000);
+    };
+
+    // Initialize effects
+    createParticles();
+    const matrixInterval = setupMatrix();
+    startTypingEffect();
+
+    // Handle resize
+    const handleResize = () => {
+      createParticles();
+      if (matrixInterval) {
+        clearInterval(matrixInterval);
+        setupMatrix();
       }
-    }
+    };
 
-    const matrixInterval = setInterval(drawMatrix, 35);
+    window.addEventListener('resize', handleResize);
 
-    // Typing animation for main heading
-    const texts = ["Developers", "Innovators", "Creators", "Visionaries"];
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeEffect() {
-      const current = texts[textIndex];
-      
-      if (isDeleting) {
-        charIndex--;
-      } else {
-        charIndex++;
-      }
-
-      if (textRef.current) {
-        textRef.current.textContent = current.substring(0, charIndex);
-        textRef.current.style.textShadow = `0 0 30px #00c7ff, 0 0 60px #00c7ff40`;
-      }
-
-      let typeSpeed = isDeleting ? 50 : 100;
-
-      if (!isDeleting && charIndex === current.length) {
-        typeSpeed = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        typeSpeed = 500;
-      }
-
-      setTimeout(typeEffect, typeSpeed);
-    }
-
-    setTimeout(typeEffect, 1000);
-
-    return () => clearInterval(matrixInterval);
+    return () => {
+      if (matrixInterval) clearInterval(matrixInterval);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -104,15 +132,15 @@ export default function LandingPage() {
       </div>
 
       <div className="floating-elements">
-        <div className="floating-card card-1">
+        <div className="floating-card">
           <div className="card-icon">🔌</div>
           <span>REST APIs</span>
         </div>
-        <div className="floating-card card-2">
+        <div className="floating-card">
           <div className="card-icon">🌐</div>
           <span>WebSocket</span>
         </div>
-        <div className="floating-card card-3">
+        <div className="floating-card">
           <div className="card-icon">⚡</div>
           <span>GraphQL</span>
         </div>
@@ -122,7 +150,7 @@ export default function LandingPage() {
         <div className="text-section">
           <div className="badge">
             <span className="pulse-dot"></span>
-            Trusted by 15,000+ developers worldwide
+            Trusted by 15,000+ developers
           </div>
           
           <h1>
@@ -134,7 +162,7 @@ export default function LandingPage() {
           <p className="lead-text">
             Build, connect, and scale your applications faster with our 
             <span className="gradient-text"> high-performance API platform</span>. 
-            Featuring real-time data, AI-powered insights, and enterprise-grade reliability.
+            Enterprise-grade reliability with real-time capabilities.
           </p>
 
           <div className="stats">
@@ -153,13 +181,11 @@ export default function LandingPage() {
           </div>
 
           <div className="btn-group">
-            <button className="btn-primary">
-              <span className="btn-glow"></span>
+            <button className="btn btn-primary">
               Explore APIs
               <span className="btn-arrow">→</span>
             </button>
-            <button className="btn-secondary">
-              <div className="btn-icon">📚</div>
+            <button className="btn btn-secondary">
               View Documentation
             </button>
           </div>
@@ -167,14 +193,9 @@ export default function LandingPage() {
 
         <div className="image-section">
           <div className="glow-effect"></div>
-          <img src={server} alt="Tech Server" className="server" />
+          <img src={server} alt="API Server Platform" className="server-image" />
           <div className="rotating-ring ring-1"></div>
           <div className="rotating-ring ring-2"></div>
-          <div className="pulse-dots">
-            <div className="pulse-dot"></div>
-            <div className="pulse-dot"></div>
-            <div className="pulse-dot"></div>
-          </div>
         </div>
       </div>
 
